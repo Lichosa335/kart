@@ -1,0 +1,274 @@
+      .blink-button {
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, #ff0000, #cc0000);
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+                    inset 0 0 5px rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        position: relative;
+        animation: pulse 1s infinite ease-in-out;
+        transition: all 0.2s;
+      }
+
+      .blink-button:active {
+        transform: scale(0.9);
+      }
+
+      .blink-button::after {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        right: -4px;
+        bottom: -4px;
+        border-radius: 50%;
+        border: 1px solid red;
+        animation: pulse-ring 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          box-shadow: 0 0 10px rgba(255, 0, 0, 0.7),
+                      inset 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(255, 0, 0, 0.9),
+                      0 0 30px rgba(255, 0, 0, 0.6),
+                      inset 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          transform: scale(0.8);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.5);
+          opacity: 0;
+        }
+      }
+      .russia {
+         position: absolute;
+         top: 37%;    /* Отступ сверху */
+         left: 60%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .kunad {
+         position: absolute;
+         top: 35%;    /* Отступ сверху */
+         left: 20%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .Shu {
+         position: absolute;
+         top: 50%;    /* Отступ сверху */
+         left: 22%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .Afric {
+         position: absolute;
+         top: 60%;    /* Отступ сверху */
+         left: 50%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .Ipon {
+         position: absolute;
+         top: 48%;    /* Отступ сверху */
+         left: 76%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .Citae {
+         position: absolute;
+         top: 45%;    /* Отступ сверху */
+         left: 65%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .Evrop {
+         position: absolute;
+         top: 45%;    /* Отступ сверху */
+         left: 47%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+      .Wel {
+         position: absolute;
+         top: 35%;    /* Отступ сверху */
+         left: 48%;   /* Отступ слева */
+         z-index: 1000; /* Чтобы была поверх других элементов */
+      }
+
+
+    /* На планшетах */
+    @media (max-width: 992px) {
+        .blink-button {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    /* На телефонах */
+    @media (max-width: 768px) {
+        .blink-button {
+            width: 10px;
+            height: 10px;
+            border-width: 1px;
+        }
+    }
+
+
+        .cs-btn {
+            width: 1600px;
+            height: 160px;
+            border-width: 1px;  /* Точечки тоньше */
+            z-index: 1000;
+        }
+    /* На планшетах */
+    @media (max-width: 992px) {
+        .cs-btn {
+            width: 20px;
+            height: 100px;
+        }
+    }
+
+    /* На телефонах */
+    @media (max-width: 768px) {
+        .cs-btn {
+            width: 16px;
+            height: 160px;
+            border-width: 1px;  /* Точечки тоньше */
+        }
+    }
+
+    .circle-text-css {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        display: inline-block;
+        animation: rotate-text 40s linear infinite;
+        margin-right: 20px;
+    }
+
+    .circle-char {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform:
+            translate(-50%, -50%)
+            rotate(calc(var(--i) * 18.5deg))  /* 360 / 19 букв ≈ 18.9 */
+            translate(80px)
+            rotate(calc(var(--i) * -18.5deg));
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+        transform-origin: center;
+    }
+
+    @keyframes rotate-text {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .el {
+        background-color: transparent; /* Полная прозрачность */
+        border-color: transparent;
+    }
+    .hest {
+         position: absolute;
+         top: 13.5%;    /* Отступ сверху */
+         left: 12%;   /* Отступ слева */
+         background-color: transparent; /* Полная прозрачность */
+        border-color: transparent;
+    }
+
+    /* Стили для планшетов (макс. ширина 992px) */
+    @media (max-width: 992px) {
+        .circle-text-css {
+            width: 150px;
+            height: 150px;
+            animation: rotate-text 30s linear infinite; /* Ускорим вращение */
+        }
+
+        .circle-char {
+            font-size: 12px;
+            transform:
+                translate(-50%, -50%)
+                rotate(calc(var(--i) * 18.5deg))
+                translate(60px) /* Уменьшаем радиус для планшета */
+                rotate(calc(var(--i) * -18.5deg));
+        }
+
+        /* Центровка кнопки настроек для планшета */
+        .hest {
+            position: absolute;
+            top: 14%;
+            left: 13%;
+        }
+
+        .hest img {
+            height: 100px !important;
+            width: 100px !important;
+        }
+    }
+
+    /* Стили для телефонов (макс. ширина 768px) */
+    @media (max-width: 768px) {
+        .circle-text-css {
+            width: 120px;
+            height: 120px;
+            animation: rotate-text 20s linear infinite; /* Еще быстрее вращение */
+            margin-right: 10px;
+        }
+
+        .circle-char {
+            font-size: 10px;
+            font-weight: normal;
+            transform:
+                translate(-50%, -50%)
+                rotate(calc(var(--i) * 18.5deg))
+                translate(50px) /* Еще меньше радиус для телефона */
+                rotate(calc(var(--i) * -18.5deg));
+        }
+
+        /* Центровка кнопки настроек для телефона */
+        .hest {
+            position: absolute;
+            top: 14%;
+            left: 11%;
+        }
+
+        .hest img {
+            height: 80px !important;
+            width: 80px !important;
+        }
+    }
+
+    /* Для очень маленьких телефонов (макс. ширина 480px) */
+    @media (max-width: 480px) {
+        .circle-text-css {
+            width: 90px;
+            height: 90px;
+        }
+
+        .circle-char {
+            font-size: 8px;
+            transform:
+                translate(-50%, -50%)
+                rotate(calc(var(--i) * 18.5deg))
+                translate(40px) /* Минимальный радиус */
+                rotate(calc(var(--i) * -18.5deg));
+        }
+
+        .hest {
+            top: 13%;
+            left: 9%;
+        }
+
+        .hest img {
+            height: 60px !important;
+            width: 60px !important;
+        }
+    }
+
